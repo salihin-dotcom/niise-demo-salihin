@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Sync Git Code Repo
         shell: cmd
+        env:
+            GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY: "1"
+            NODE_TLS_REJECT_UNAUTHORIZED: "0"
         run: |
           cd /d "C:\springboot-training\niise-demo"
           if not exist .git (
@@ -27,7 +30,7 @@ jobs:
           )
 
       - name: Set Up Java Environment
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '17'
