@@ -14,8 +14,9 @@ jobs:
       - name: Sync Git Code Repo
         shell: cmd
         env:
-            GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY: "1"
-            NODE_TLS_REJECT_UNAUTHORIZED: "0"
+          GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY: "1"
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+
         run: |
           cd /d "C:\springboot-training\niise-demo"
           if not exist .git (
