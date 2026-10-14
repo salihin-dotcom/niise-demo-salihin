@@ -18,6 +18,7 @@ jobs:
           NODE_TLS_REJECT_UNAUTHORIZED: "0"
 
         run: |
+          git config --global --add safe.directory "C:/springboot-training/niise-demo"
           cd /d "C:\springboot-training\niise-demo"
           if not exist .git (
               git init
